@@ -1,8 +1,10 @@
 import Image from "next/image";
+import HeaderComponent from "@/components/HeaderComponent";
+
 
 export default function Home() {
-  return <main>
-    <div>hello</div>
-    <div>world</div>
+  return 
+  <main>
+    <HeaderComponent />
   </main>;
 }
