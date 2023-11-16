@@ -1,10 +1,10 @@
 import Image from "next/image";
-import HeaderComponent from "@/components/HeaderComponent";
-
+import HeroSection from "@/app/sections/main_page/HeroSection";
 
 export default function Home() {
-  return 
-  <main>
-    <HeaderComponent />
-  </main>;
+  return (
+    <div>
+      <HeroSection />
+    </div>
+  );
 }
