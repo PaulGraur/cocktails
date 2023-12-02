@@ -1,8 +1,14 @@
+"use client"
 import Image from "next/image";
+import classNames from "classnames";
 import s from "./HeroSection.module.scss";
 import Coctails from "./../../../images/hero/Coctails.png";
+import Select from "react-select";
+import { useState } from "react";
+
 
 const HeroSection = () => {
+  
   const options = [
     { value: "A", label: "A" },
     { value: "B", label: "B" },
@@ -41,36 +47,59 @@ const HeroSection = () => {
     { value: "9", label: "9" },
     { value: "0", label: "0" },
   ];
+const defaultOption = options[0];
 
   return (
-    <section className={s.container}>
-      <div className={s.hero}>
+    <section className={classNames(s.container, s.hero)}>
+      <div className={s.hero__content}>
         <div className={s.hero__context}>
-          <h1 className={s.hero__title}>
-            A party without cocktails is not like a party
-          </h1>
-          <Image className={s.hero__img} src={Coctails} alt="Coctails" />
-        </div>
-        <div className={s.hero__search}>
-          <p className={s.hero__paragraph}>
-            Search your favorite cocktail by ABC
-          </p>
+          <div className={s.hero__info}>
+            <h1 className={s.hero__title}>
+              A party without cocktails is not like a party
+            </h1>
+            <Image
+              className={s.hero__img__mobile}
+              src={Coctails}
+              alt="Coctails"
+            />
+          </div>
           <div className={s.hero__change}>
-            {options.map((option, index) => (
-              <button className={s.hero__change__link} key={index}>
-                {option.label}
-              </button>
-            ))}
-          </div>
-          <div className={s.mobile__dropdown}>
-            <select className={s.mobile__select}>
-              {options.slice(0, 3).map((option, index) => (
-                <option className={s.mobile__label} key={index} value={option.value}>
+            <p className={s.hero__paragraph}>
+              Search your favorite cocktail by ABC
+            </p>
+            <div className={s.hero__change__link}>
+              {options.map((option, index) => (
+                <button className={s.hero__change__cards} key={index}>
                   {option.label}
-                </option>
+                </button>
               ))}
-            </select>
+            </div>
           </div>
+        </div>
+        <Image className={s.hero__img} src={Coctails} alt="Coctails" />
+      </div>
+      <div className={s.mobile__search}>
+        <div className={s.mobile__dropdown}>
+        <Select
+            classNamePrefix="custom-select"
+            options={options}
+            menuPlacement="auto" 
+            menuPosition="fixed" 
+            maxMenuHeight={90}
+            defaultValue={defaultOption} 
+            styles={{
+              control: provided => ({
+                ...provided,
+                width: '93px',
+                fontSize: '16px',
+                fontWeight: 700
+              }),
+              option: provided => ({
+                ...provided,
+                fontSize: '10px' // Розмір шрифту для Option
+              })
+            }}
+          />
         </div>
       </div>
     </section>
