@@ -1,0 +1,144 @@
+@import "./../../../style/colors";
+@import "./../../../style/container";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  // gap: 50px;
+  // margin-top: 97px;
+  // margin-bottom: 108px;
+
+  &__context {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    color: $colorHeroh1;
+
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 190%;
+    width: 287px;
+
+    @media (min-width: 768px) {
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 150%;
+      width: 688px;
+      text-align: left;
+    }
+  }
+
+  &__search {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+    }
+  }
+
+  &__paragraph {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 200%;
+    letter-spacing: 0.28px;
+    text-align: center;
+
+    // font-size: 18px;
+    // font-weight: 500;
+    // line-height: 28px;
+    // text-align: left;
+  }
+
+  &__change {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 17px;
+      justify-content: space-evenly;
+      width: 440px;
+    }
+
+    &__link {
+      color: $colorHeroLinkChange;
+
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      &:hover {
+        color: $colorHeroTextHover;
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__img {
+    width: 307px;
+    height: 274px;
+    @media (min-width: 768px) {
+      width: 368px;
+      height: 329px;
+    }
+    @media (min-width: 1280px) {
+      width: 550px;
+      height: 492px;
+    }
+  }
+}
+.mobile {
+  &__dropdown {
+    display: flex;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__select {
+    overflow-y: auto;
+    scrollbar-width: thin;
+
+    font-size: 16px;
+    font-weight: 700;
+    align-items: center;
+
+    width: 93px;
+    height: 34px;
+    padding: 5px;
+
+    color: $colorHeroSelect;
+    outline: none;
+    border-radius: 4px;
+    border: $borderHeroSelect;
+
+    &::-webkit-scrollbar {
+      width: 1.4px;
+      height: 34px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scrollbarHero;
+      border-radius: 4px;
+    }
+  }
+
+  &__label {
+    width: 37px;
+    color: $colorHeroLabel;
+    border-radius: 4px;
+    border: $borderHeroSelect;
+    font-size: 10px;
+    font-weight: 700;
+  }
+}
