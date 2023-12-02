@@ -1,12 +1,29 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import classNames from "classnames";
 import Logo from "@/images/header/logo.svg";
 import s from "./HeaderComponent.module.scss";
 import Search from "./../images/header/search.svg";
+import React, { useState, useEffect } from "react";
 import BurgerMenuOpen from "./../images/header/burger-menu.svg";
 
+const menuItem = [
+  { title: "Home", type: "link", link: "#" },
+  { title: "Favourite", type: "link", link: "#" },
+];
+
 const HeaderComponent = () => {
+  const NavigationContent = (
+    <ul className={s.header__nav__list}>
+      {menuItem.map((item) => (
+        <li key={item.title}>
+          {item.type === "link" && <Link href={item.link}>{item.title}</Link>}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <header className={classNames(s.container, s.header)}>
       <div className={s.header__info}>
@@ -15,16 +32,7 @@ const HeaderComponent = () => {
             <Image src={Logo} alt="logo" />
           </Link>
         </div>
-        <nav className={s.header__nav}>
-          <ul className={s.header__nav__list}>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Favourite</a>
-            </li>
-          </ul>
-        </nav>
+        <nav className={s.header__nav}>{NavigationContent}</nav>
       </div>
       <div className={s.header__forms}>
         <form className={s.header__search} action="">
