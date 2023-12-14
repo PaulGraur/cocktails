@@ -1,11 +1,12 @@
 import Image from "next/image";
 import HeroSection from "@/app/sections/main_page/HeroSection";
-import DarkModeToggle from "@/components/DarkToogleComponent";
+import CoctailCards from "./sections/main_page/CoctailCards";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
+      <CoctailCards />
     </div>
   );
 }

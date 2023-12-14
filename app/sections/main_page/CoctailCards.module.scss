@@ -1,0 +1,10 @@
+@import "./../../../style/colors";
+@import "./../../../style/container";
+
+.card__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 23px;
+    margin: 60px 0;
+}
