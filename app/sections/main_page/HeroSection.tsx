@@ -4,7 +4,6 @@ import classNames from "classnames";
 import s from "./HeroSection.module.scss";
 import Coctails from "./../../../images/hero/Coctails.png";
 import Select from "react-select";
-import { useState } from "react";
 
 
 const HeroSection = () => {
@@ -96,7 +95,7 @@ const defaultOption = options[0];
               }),
               option: provided => ({
                 ...provided,
-                fontSize: '10px' // Розмір шрифту для Option
+                fontSize: '10px' 
               })
             }}
           />
