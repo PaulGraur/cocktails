@@ -1,14 +1,14 @@
+"use client";
 import Image from "next/image";
-import classNames from "classnames";
 import s from "./CoctailCards.module.scss";
 import MainTitleComponent from "./../../../components/MainTitleComponent";
 import CardsListCoctails from "@/components/CardsListCoctails";
-import  data, {CardData} from "./../../../assets/data";
+import data, { CardData } from "./../../../assets/data";
+import { useState, useEffect } from "react";
 
 const CoctailCards = () => {
-
   const handleButtonClick = () => {
-    console.log('Button clicked!');
+    console.log("Button clicked!");
   };
 
   return (
