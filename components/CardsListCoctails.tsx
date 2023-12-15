@@ -1,7 +1,6 @@
 import Image from "next/image";
-import classNames from "classnames";
-import s from "./CardsListCoctails.module.scss";
 import { CardData } from "../assets/data";
+import s from "./CardsListCoctails.module.scss";
 
 interface CardProps {
   cardData: CardData;
@@ -16,11 +15,13 @@ const CardsListCoctails: React.FC<CardProps> = ({
 
   return (
     <div className={s.cards}>
-      <Image className={s.cards__img} src={imageSrc} alt="Card" width={395} height={395}/>
+      <Image className={s.cards__img} src={imageSrc.url} alt={imageSrc.alt} />
+      <div className={s.cards__context}>
       <h3 className={s.cards__title}>{text}</h3>
       <div className={s.cards__buttons}>
         <button className={s.cards__buttons__more}>Learn more</button>
         <button className={s.cards__buttons__add}>Add to</button>
+      </div>
       </div>
     </div>
   );
